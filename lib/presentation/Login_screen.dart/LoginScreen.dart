@@ -1,4 +1,5 @@
 import 'package:digify/presentation/Login_screen.dart/widgets/Remember_forget_row.dart';
+import 'package:digify/presentation/signUp_screen/signUP.dart';
 import 'package:digify/widgets/AuthFooter.dart';
 import 'package:digify/widgets/AuthHeader.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +50,7 @@ class _LoginscreenState extends State<Loginscreen> {
                           controller: emailController,
                           keyboardType: TextInputType.emailAddress,
                           hintText: 'Enter your email',
-                          labelText: 'Email',
+
                           prefixIcon: const Icon(Icons.email),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -62,7 +63,6 @@ class _LoginscreenState extends State<Loginscreen> {
                         CustomTextfield(
                           controller: passwordController,
                           hintText: 'Enter your password',
-                          labelText: 'Password',
                           prefixIcon: const Icon(Icons.lock),
                           obscureText: _obscurePassword,
                           suffixIcon: IconButton(
@@ -102,7 +102,11 @@ class _LoginscreenState extends State<Loginscreen> {
 
                         CustomButton(
                           text: 'Login',
-                          onPressed: () {},
+                            onPressed: () {
+                            if (formKey.currentState!.validate()) {
+                              // Do login logic
+                            }
+                          },
                           textStylebutton: Apptheme.buttonBoldsecondary,
                         ),
 
@@ -125,7 +129,13 @@ class _LoginscreenState extends State<Loginscreen> {
                   AuthFooter(
                     questionText: 'Don\'t have an account ? ',
                     actionText: 'Sign up',
-                    onTap: () {},
+                    onTap: () {
+  Navigator.pushNamed(
+    context,
+    '/registration-screen',
+  );
+},
+
                   ),
                 ],
               ),

@@ -4,7 +4,6 @@ class CustomTextfield extends StatelessWidget {
   CustomTextfield({
     super.key,
     this.hintText,
-    required this.labelText,
     this.prefixIcon,
     this.suffixIcon,
     this.obscureText = false,
@@ -15,7 +14,6 @@ class CustomTextfield extends StatelessWidget {
   final TextEditingController? controller;
 
   final String? hintText;
-  final String? labelText;
   final Icon? prefixIcon;
   final IconButton? suffixIcon;
   final bool obscureText;

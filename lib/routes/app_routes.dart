@@ -18,7 +18,7 @@ class AppRoutes {
   static Map<String, WidgetBuilder> routes = {
     initial: (context) => const Loginscreen(),
     loginScreen: (context) => const Loginscreen(),
-    registrationScreen: (context) => const SignupScreen(),
+    registrationScreen: (context) => const SignUpScreen(),
     homeDashboard: (context) => const HomePage(),
     textEditor: (context) => const TextEditorScreen(),
     basicData: (context) => const BasicDataScreen(),
