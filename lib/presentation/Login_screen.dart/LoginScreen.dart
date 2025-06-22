@@ -103,9 +103,14 @@ class _LoginscreenState extends State<Loginscreen> {
                         CustomButton(
                           text: 'Login',
                             onPressed: () {
-                            if (formKey.currentState!.validate()) {
-                              // Do login logic
-                            }
+    Navigator.pushNamed(
+                                context,
+                                '/home-dashboard', 
+                              );
+                            // if (formKey.currentState!.validate()) {
+                            //   // Do login logic
+                          
+                            // }
                           },
                           textStylebutton: Apptheme.buttonBoldsecondary,
                         ),
