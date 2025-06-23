@@ -1,10 +1,7 @@
-import 'package:digify/presentation/Login_screen.dart/widgets/Remember_forget_row.dart';
+import 'package:digify/data/auth_service.dart';
+import 'package:digify/presentation/Login_screen.dart/widgets/LoginForm.dart';
 import 'package:digify/widgets/AuthFooter.dart';
-import 'package:digify/widgets/AuthHeader.dart';
 import 'package:flutter/material.dart';
-import 'package:digify/widgets/CustomButton.dart';
-import 'package:digify/widgets/CustomTextField.dart';
-import 'package:digify/theme/appTheme.dart';
 
 class Loginscreen extends StatefulWidget {
   const Loginscreen({super.key});
@@ -19,124 +16,92 @@ class _LoginscreenState extends State<Loginscreen> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final AuthService _authService = AuthService();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _handleLogin(BuildContext context) async {
+    if (formKey.currentState!.validate()) {
+      bool isLoggedIn = await _authService.signIn(
+        context,
+        emailController.text.trim(),
+        passwordController.text,
+      );
+      if (isLoggedIn) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Welcome back!'),
+            backgroundColor: Colors.green,
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+        Navigator.pushReplacementNamed(context, '/Navigation-Bar');
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Invalid email or password.'),
+            backgroundColor: Colors.red,
+            behavior: SnackBarBehavior.floating,
+            duration: Duration(seconds: 4),
+          ),
+        );
+      }
+    }
+  }
+
+  void _handleForgotPassword(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Password reset link sent to your email'),
+        backgroundColor: Colors.green,
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
+  }
+
+  void _handleSignUp(BuildContext context) {
+    _authService.signUp(context);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: ListView(
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Form(
-                    key: formKey,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const SizedBox(height: 85),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: ListView(
+          children: [
+            buildLoginForm(
+              formKey: formKey,
+              emailController: emailController,
+              passwordController: passwordController,
+              obscurePassword: _obscurePassword,
+              rememberMe: _rememberMe,
+              onToggleObscure: () {
+                setState(() {
+                  _obscurePassword = !_obscurePassword;
+                });
+              },
+              onRememberMeChanged: (value) {
+                setState(() {
+                  _rememberMe = value ?? false;
+                });
+              },
+              onForgotPassword: () => _handleForgotPassword(context),
+              onLogin: () => _handleLogin(context),
+            ),
 
-                        AuthHeader(
-                          imagePath: 'assets/images/logoframe.png',
-                          title: 'Sign in to continue',
-                        ),
-                        const SizedBox(height: 40),
-
-                        CustomTextfield(
-                          controller: emailController,
-                          keyboardType: TextInputType.emailAddress,
-                          hintText: 'Enter your email',
-
-                          prefixIcon: const Icon(Icons.email),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter your email';
-                            }
-                            return null;
-                          },
-                        ),
-                        const SizedBox(height: 20),
-                        CustomTextfield(
-                          controller: passwordController,
-                          hintText: 'Enter your password',
-                          prefixIcon: const Icon(Icons.lock),
-                          obscureText: _obscurePassword,
-                          suffixIcon: IconButton(
-                            icon: Icon(
-                              _obscurePassword
-                                  ? Icons.visibility_off
-                                  : Icons.visibility,
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                _obscurePassword = !_obscurePassword;
-                              });
-                            },
-                          ),
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter your password';
-                            }
-                            return null;
-                          },
-                        ),
-                        const SizedBox(height: 28),
-
-                        RememberForgotRow(
-                          rememberMeValue: _rememberMe,
-                          onRememberMeChanged: (value) {
-                            setState(() {
-                              _rememberMe = value ?? false;
-                            });
-                          },
-                          onForgotPassword: () {
-                            // Navigate to forgot password screen
-                          },
-                        ),
-
-                        const SizedBox(height: 28),
-
-                        CustomButton(
-                          text: 'Login',
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/Navigation-Bar');
-                            // if (formKey.currentState!.validate()) {
-                            //   // Do login logic
-
-                            // }
-                          },
-                          textStylebutton: Apptheme.buttonBoldsecondary,
-                        ),
-
-                        const SizedBox(height: 24),
-                        const Text('Or', style: Apptheme.caption),
-                        const SizedBox(height: 24),
-
-                        CustomButton(
-                          text: 'Continue with Google',
-                          onPressed: () {},
-                          backgroundColor: Colors.white,
-                          textStylebutton: Apptheme.buttonBoldprimary,
-                          svgPath: 'assets/images/google.svg',
-                        ),
-                      ],
-                    ),
-                  ),
-
-                  const SizedBox(height: 150),
-                  AuthFooter(
-                    questionText: 'Don\'t have an account ? ',
-                    actionText: 'Sign up',
-                    onTap: () {
-                      Navigator.pushNamed(context, '/registration-screen');
-                    },
-                  ),
-                ],
-              ),
-            ],
-          ),
+            const SizedBox(height: 50),
+            AuthFooter(
+              questionText: "Don't have an account? ",
+              actionText: "Sign up",
+              onTap: () => _handleSignUp(context),
+            ),
+          ],
         ),
       ),
     );

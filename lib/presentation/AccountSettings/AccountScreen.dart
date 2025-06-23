@@ -49,7 +49,9 @@ class AccountSettingsScreen extends StatelessWidget {
             ),
             title: const Text('Profile'),
             trailing: const Icon(Icons.chevron_right),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, '/user-profile');
+            },
           ),
           ListTile(
             leading: SvgPicture.asset('assets/images/language.svg', height: 24),
@@ -88,7 +90,9 @@ class AccountSettingsScreen extends StatelessWidget {
           ListTile(
             leading: SvgPicture.asset('assets/images/signout.svg', height: 24),
             title: const Text('Sign out'),
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, '/login-screen');
+            },
           ),
         ],
       ),

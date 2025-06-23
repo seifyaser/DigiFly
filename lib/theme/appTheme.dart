@@ -66,7 +66,14 @@ static const TextStyle buttonBoldsecondary = TextStyle(
     color: textColorsecondary,
   );
 
-  static const TextStyle caption = TextStyle(
+  static const TextStyle caption1 = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 14,
+    fontWeight: FontWeight.w400, // Medium
+    color: Color.fromARGB(255, 0, 0, 0),
+  );
+
+   static const TextStyle caption2 = TextStyle(
     fontFamily: fontFamily,
     fontSize: 14,
     fontWeight: FontWeight.w400, // Medium

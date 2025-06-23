@@ -21,7 +21,7 @@ class RememberForgotRow extends StatelessWidget {
           value: rememberMeValue,
           onChanged: onRememberMeChanged,
         ),
-        const Text('Remember me', style: Apptheme.caption),
+        const Text('Remember me', style: Apptheme.caption1),
         const Spacer(),
         TextButton(
           onPressed: onForgotPassword,

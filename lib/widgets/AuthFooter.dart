@@ -18,7 +18,7 @@ class AuthFooter extends StatelessWidget {
       children: [
         Text(
           questionText,
-          style: Apptheme.caption,
+          style: Apptheme.caption1,
         ),
         GestureDetector(
           onTap: onTap,

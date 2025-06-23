@@ -1,5 +1,6 @@
 import 'package:digify/presentation/AccountSettings/AccountScreen.dart';
 import 'package:digify/presentation/TextEditor_screen/TextEditorScreen.dart';
+import 'package:digify/presentation/basicData_screen/basicData.dart';
 import 'package:digify/presentation/home_screen/homepage.dart';
 import 'package:digify/theme/appTheme.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ class _NavigationBartoolState extends State<NavigationBartool> {
     const HomePage(),
      TextEditorScreen(),
     const AccountSettingsScreen(),
+ 
   ];
 
   void _onItemTapped(int index) {
