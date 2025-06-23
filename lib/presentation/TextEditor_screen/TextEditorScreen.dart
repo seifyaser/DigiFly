@@ -1,5 +1,7 @@
 import 'package:digify/presentation/TextEditor_screen/cubit/text_editor_cubit.dart';
 import 'package:digify/presentation/TextEditor_screen/cubit/text_editor_state.dart';
+import 'package:digify/presentation/TextEditor_screen/widgets/FormatToolBar.dart';
+import 'package:digify/theme/appTheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -32,32 +34,6 @@ when an unknown printer took a galley of type and scrambled it to make a type sp
     super.dispose();
   }
 
-  Widget _buildFormatToolbar(BuildContext context, TextEditorState state) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      decoration: BoxDecoration(
-        color: Colors.grey[200],
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children:
-            state.activeFormats.keys.map((iconData) {
-              final isActive = state.activeFormats[iconData]!;
-              return GestureDetector(
-                onTap:
-                    () =>
-                        context.read<TextEditorCubit>().toggleFormat(iconData),
-                child: Icon(
-                  iconData,
-                  color: isActive ? Colors.blue : Colors.black,
-                ),
-              );
-            }).toList(),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<TextEditorCubit, TextEditorState>(
@@ -78,7 +54,7 @@ when an unknown printer took a galley of type and scrambled it to make a type sp
               style: TextStyle(color: Colors.black),
             ),
             centerTitle: true,
-            backgroundColor: Colors.white,
+
             elevation: 0,
           ),
           body: Padding(
@@ -86,15 +62,12 @@ when an unknown printer took a galley of type and scrambled it to make a type sp
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Introduce yourself',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
+                const Text('Introduce your self', style: Apptheme.heading3),
                 const SizedBox(height: 20),
                 // =========== ToolBar =========== //
                 Row(
                   children: [
-                    Expanded(child: _buildFormatToolbar(context, state)),
+                    Expanded(child: buildFormatToolbar(context, state)),
                     IconButton(
                       icon: const Icon(Icons.undo),
                       tooltip: 'Undo',

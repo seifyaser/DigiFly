@@ -24,6 +24,13 @@ class Apptheme {
     color: Color(0xff808080),
   );
 
+ static const TextStyle heading3 = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 16,
+    fontWeight: FontWeight.w600, // SemiBold
+    color: Color(0xff1A1A1A),
+  );
+
   static const TextStyle body = TextStyle(
     fontFamily: fontFamily,
     fontSize: 16,
