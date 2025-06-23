@@ -102,14 +102,11 @@ class _LoginscreenState extends State<Loginscreen> {
 
                         CustomButton(
                           text: 'Login',
-                            onPressed: () {
-    Navigator.pushNamed(
-                                context,
-                                '/home-dashboard', 
-                              );
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/Navigation-Bar');
                             // if (formKey.currentState!.validate()) {
                             //   // Do login logic
-                          
+
                             // }
                           },
                           textStylebutton: Apptheme.buttonBoldsecondary,
@@ -135,12 +132,8 @@ class _LoginscreenState extends State<Loginscreen> {
                     questionText: 'Don\'t have an account ? ',
                     actionText: 'Sign up',
                     onTap: () {
-  Navigator.pushNamed(
-    context,
-    '/registration-screen',
-  );
-},
-
+                      Navigator.pushNamed(context, '/registration-screen');
+                    },
                   ),
                 ],
               ),

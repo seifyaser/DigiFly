@@ -39,6 +39,7 @@ Widget buildProductList() => SliverToBoxAdapter(
                     },
                   ),
                 ),
+                const SizedBox(height: 16),
               ],
             ),
           );

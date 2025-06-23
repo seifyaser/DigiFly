@@ -5,7 +5,7 @@ Widget buildBanner() {
     child: Padding(
       padding: const EdgeInsets.all(16.0),
       child: SizedBox(
-        height: 200, 
+        height: 175, 
         child: ListView(
           scrollDirection: Axis.horizontal,
           children: [

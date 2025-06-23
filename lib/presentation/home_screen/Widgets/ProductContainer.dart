@@ -1,4 +1,5 @@
- import 'package:flutter/material.dart';
+ import 'package:digify/theme/appTheme.dart';
+import 'package:flutter/material.dart';
 
 Widget Productcontainer() {
     return Container(
@@ -72,10 +73,7 @@ Widget Productcontainer() {
             //     SizedBox(height:10,),
                 Text(
                   'Default box, number 1',
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87),
+                  style: Apptheme.TextBoldtertiary,
                 ),
               SizedBox(height: 8,),
                 Row(
@@ -83,14 +81,14 @@ Widget Productcontainer() {
                   children: [
                     Text(
                       'Category 1',
-                      style: TextStyle(fontSize: 18, color: Colors.grey),
+                      style: Apptheme.heading2,
                     ),
                     Text(
                       '1500 L.E',
                       style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 17,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF28A745)),
+                          color: Color(0xFF46BC8A)),
                     ),
                   ],
                 ),

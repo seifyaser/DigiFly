@@ -5,6 +5,7 @@ class Apptheme {
   static const Color secondaryColor = Color(0xffC50030);
   static const Color textColorPrimary = Colors.black;
   static const Color textColorsecondary = Colors.white;
+  static const Color Textcolortertiary = Color(0xff1A1A1A);
 
 
   static const String fontFamily = 'Cairo';
@@ -14,6 +15,13 @@ class Apptheme {
     fontSize: 18,
     fontWeight: FontWeight.w600, // SemiBold
     color: textColorPrimary,
+  );
+
+ static const TextStyle heading2 = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 14,
+    fontWeight: FontWeight.w600, // SemiBold
+    color: Color(0xff808080),
   );
 
   static const TextStyle body = TextStyle(
@@ -28,6 +36,13 @@ class Apptheme {
     fontSize: 18,
     fontWeight: FontWeight.w700, // Bold
     color: textColorPrimary,
+  );
+
+   static const TextStyle TextBoldtertiary = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 14,
+    fontWeight: FontWeight.w700, // Bold
+    color: Textcolortertiary,
   );
 
 static const TextStyle buttonBoldsecondary = TextStyle(
