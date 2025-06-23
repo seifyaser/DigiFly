@@ -15,7 +15,7 @@ class _NavigationBartoolState extends State<NavigationBartool> {
 
   final List<Widget> _screens = [
     const HomePage(),
-    const TextEditorScreen(),
+     TextEditorScreen(),
     const AccountSettingsScreen(),
   ];
 

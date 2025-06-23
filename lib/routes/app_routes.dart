@@ -24,7 +24,7 @@ class AppRoutes {
     loginScreen: (context) => const Loginscreen(),
     registrationScreen: (context) => const SignUpScreen(),
     homeDashboard: (context) => const HomePage(),
-    textEditor: (context) => const TextEditorScreen(),
+    textEditor: (context) => TextEditorScreen(),
     basicData: (context) => const BasicDataScreen(),
     settingsScreen: (context) => const AccountSettingsScreen(),
   };

@@ -16,10 +16,8 @@ class HomePage extends StatelessWidget {
           buildSearchBar(),
           buildBanner(),
           buildProductList(),
-        
         ],
       ),
     );
   }
 }
-
