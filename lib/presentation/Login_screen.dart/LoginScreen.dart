@@ -1,9 +1,7 @@
 import 'package:digify/presentation/Login_screen.dart/widgets/Remember_forget_row.dart';
-import 'package:digify/presentation/signUp_screen/signUP.dart';
 import 'package:digify/widgets/AuthFooter.dart';
 import 'package:digify/widgets/AuthHeader.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:digify/widgets/CustomButton.dart';
 import 'package:digify/widgets/CustomTextField.dart';
 import 'package:digify/theme/appTheme.dart';

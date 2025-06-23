@@ -12,12 +12,11 @@ Widget Productcontainer() {
             color: Colors.grey.withOpacity(0.2),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: const Offset(0, 3),
+            offset: const Offset(5, 3),
           ),
         ],
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Stack(
             children: [
@@ -70,7 +69,6 @@ Widget Productcontainer() {
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-            //     SizedBox(height:10,),
                 Text(
                   'Default box, number 1',
                   style: Apptheme.TextBoldtertiary,

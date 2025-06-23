@@ -45,6 +45,13 @@ class Apptheme {
     color: Textcolortertiary,
   );
 
+ static const TextStyle TextBold4 = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 14,
+    fontWeight: FontWeight.w700, // Bold
+    color: primaryColor,
+  );
+
 static const TextStyle buttonBoldsecondary = TextStyle(
     fontFamily: fontFamily,
     fontSize: 18,
