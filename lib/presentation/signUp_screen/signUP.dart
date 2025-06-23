@@ -39,7 +39,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
       Navigator.pushReplacementNamed(context, '/Navigation-Bar');
     } catch (e) {
       _showSnackBar(e.toString());
-    } }
+    } finally {
+      setState(() {
+        _isLoading = false;
+      });
+    }
+  }
 
   void _showSnackBar(String message) {
     if (!mounted) return;

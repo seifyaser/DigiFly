@@ -7,6 +7,18 @@ class AuthService {
     'user@digifly.com': 'user123',
     'test@digifly.com': 'test123',
   };
+  
+  final List<String> _existingEmails = [
+    'john.doe@example.com',
+    'jane.smith@example.com',
+    'admin@digifly.com',
+  ];
+
+  final List<String> _existingUsernames = [
+    'johndoe',
+    'janesmith',
+    'admin',
+  ];
 
   Future<bool> signIn(BuildContext context, String email, String password) async {
     if (_mockCredentials.containsKey(email) && _mockCredentials[email] == password) {
@@ -21,12 +33,18 @@ class AuthService {
   Future<void> register(String username, String email, String password) async {
     await Future.delayed(const Duration(seconds: 1));
 
-    if (_mockCredentials.containsKey(email)) {
+    if (_existingEmails.contains(email) || _mockCredentials.containsKey(email)) {
       throw Exception('Email already exists!');
     }
+
+    if (_existingUsernames.contains(username.toLowerCase())) {
+      throw Exception('Username already taken!');
+    }
+
     _mockCredentials[email] = password;
 
-    return;
+    _existingEmails.add(email);
+    _existingUsernames.add(username.toLowerCase());
   }
 
   void signUp(BuildContext context) {
