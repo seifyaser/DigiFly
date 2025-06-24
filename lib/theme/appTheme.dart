@@ -6,6 +6,7 @@ class Apptheme {
   static const Color textColorPrimary = Colors.black;
   static const Color textColorsecondary = Colors.white;
   static const Color Textcolortertiary = Color(0xff1A1A1A);
+  static const Color Textcolorquaternary = Color(0xff666666);
 
 
   static const String fontFamily = 'Cairo';
@@ -29,6 +30,20 @@ class Apptheme {
     fontSize: 16,
     fontWeight: FontWeight.w600, // SemiBold
     color: Color(0xff1A1A1A),
+  );
+
+  static const TextStyle heading4 = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 14,
+    fontWeight: FontWeight.w600, // SemiBold
+    color: Color(0xff1A1A1A),
+  );
+
+static const TextStyle heading5 = TextStyle(
+    fontFamily: fontFamily,
+    fontSize: 14,
+    fontWeight: FontWeight.w700, // Bold
+    color: Textcolorquaternary,
   );
 
   static const TextStyle body = TextStyle(

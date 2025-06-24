@@ -1,3 +1,4 @@
+import 'package:digify/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:digify/theme/appTheme.dart';
 
@@ -21,12 +22,12 @@ class RememberForgotRow extends StatelessWidget {
           value: rememberMeValue,
           onChanged: onRememberMeChanged,
         ),
-        const Text('Remember me', style: Apptheme.caption1),
+         Text(S.of(context).authLoginRememberMe, style: Apptheme.caption1),
         const Spacer(),
         TextButton(
           onPressed: onForgotPassword,
-          child: const Text(
-            'Forgot Password ?',
+          child:  Text(
+            S.of(context).authLoginForgotPassword,
             style: TextStyle(color: Apptheme.primaryColor),
           ),
         ),

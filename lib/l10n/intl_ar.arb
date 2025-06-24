@@ -1,52 +1,62 @@
 {
-  "login": {
-    "title": "تسجيل الدخول للمتابعة",
-    "email": "البريد الإلكتروني",
-    "password": "كلمة المرور",
-    "rememberMe": "تذكرني",
-    "forgotPassword": "هل نسيت كلمة المرور؟",
-    "loginButton": "تسجيل الدخول",
-    "or": "أو",
-    "continueWithGoogle": "التسجيل عن طريق جوجل",
-    "noAccount": "ليس لديك حساب؟",
-    "signUp": "إنشاء حساب"
-  },
-  "signup": {
-    "title": "إنشاء حساب جديد",
-    "username": "اسم المستخدم",
-    "email": "البريد الإلكتروني",
-    "password": "كلمة المرور",
-    "confirmPassword": "تأكيد كلمة المرور",
-    "signUpButton": "إنشاء حساب",
-    "alreadyHaveAccount": "لديك حساب بالفعل؟",
-    "login": "تسجيل الدخول"
-  },
-  "home": {
-    "welcome": "مرحبًا",
-    "searchPlaceholder": "ابحث هنا...",
-    "skip": "تخطّي",
-    "theDigitalHustle": "العمل الرقمي",
-    "andFly": "والانطلاق",
-    "bestSeller": "الأفضل مبيعًا",
-    "viewAll": "عرض الكل"
-  },
-  "textEditor": {
-    "title": "محرر النص",
-    "introduceYourSelf": "قدم نفسك"
-  },
-  "settings": {
-    "title": "الإعدادات",
-    "profile": "الحساب الشخصي",
-    "languages": "اللغة",
-    "aboutUs": "معلومات عنا",
-    "callUs": "اتصل بنا",
-    "signOut": "تسجيل الخروج"
-  },
-  "account": {
-    "title": "تحديث الحساب",
-    "email": "البريد الإلكتروني",
-    "firstName": "الاسم الأول",
-    "lastName": "اسم العائلة",
-    "save": "حفظ"
-  }
+  "@@locale": "ar",
+  "authLoginTitle": "تسجيل الدخول للمتابعة",
+  "authLoginEmail": "البريد الإلكتروني",
+  "authLoginPassword": "كلمة المرور",
+  "authLoginRememberMe": "تذكرني",
+  "authLoginForgotPassword": "هل نسيت كلمة المرور؟",
+  "authLoginButton": "تسجيل الدخول",
+  "authLoginOr": "أو",
+  "authLoginContinueWithGoogle": "التسجيل عن طريق جوجل",
+  "authLoginNoAccount": "ليس لديك حساب؟",
+  "authLoginSignUp": "إنشاء حساب",
+  "authSignupSuccessMessage": "تم إنشاء الحساب بنجاح!",
+"authValidationEnterName": "يرجى إدخال الاسم",
+"authValidationEnterEmail": "يرجى إدخال البريد الإلكتروني",
+"authValidationEnterPassword": "يرجى إدخال كلمة المرور",
+"authValidationEnterConfirmPassword": "يرجى تأكيد كلمة المرور",
+"authValidationPasswordNotMatch": "كلمتا المرور غير متطابقتين",
+"authValidationPasswordLength" : "كلمة المرور يجب ان تكون على الاقل 8 حروف",
+
+
+  "authSignupTitle": "إنشاء حساب جديد",
+  "authSignupUsername": "اسم المستخدم",
+  "authSignupEmail": "البريد الإلكتروني",
+  "authSignupPassword": "كلمة المرور",
+  "authSignupConfirmPassword": "تأكيد كلمة المرور",
+  "authSignupButton": "إنشاء حساب",
+  "authSignupAlreadyHaveAccount": "لديك حساب بالفعل؟",
+  "authSignupLogin": "تسجيل الدخول",
+
+  "homeWelcome": "مرحبًا",
+  "homeSearchPlaceholder": "ابحث هنا...",
+  "homeSkip": "تخطّي",
+  "homeTheDigitalHustle": "العمل الرقمي",
+  "homeAndFly": "والانطلاق",
+  "homeBestSeller": "الأفضل مبيعًا",
+  "homeViewAll": "عرض الكل",
+
+  "editorTitle": "محرر النصوص",
+  "editorIntroduceYourSelf": "قدم نفسك",
+  "placeholderEditorfield": "إنها سلسلة من الكلمات اللاتينية التي ، عند وضعها في موضعها ، لا تشكل جملًا بمعنى كامل ، ولكنها تعطي الحياة لنص اختبار مفيد لملء الفراغات التي يتم شغلها لاحقًا من نصوص مخصصة كتبها متخصصون في الاتصال.عنوان",
+
+  "settingsTitle": "الإعدادات",
+  "settingsProfile": "الحساب الشخصي",
+  "settingsLanguages": "اللغة",
+  "settingsAboutUs": "معلومات عنا",
+  "settingsCallUs": "اتصل بنا",
+   "settingsCallUsBanner": "تواصل معنا",
+  "settingsSignOut": "تسجيل الخروج",
+
+  "accountTitle": "المعلومات الأساسية",
+  "accountEmail": "البريد الإلكتروني",
+  "accountFirstName": "الاسم الأول",
+  "accountLastName": "اسم العائلة",
+  "accountSave": "حفظ",
+  "authLoginInvalid": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+  "authLoginForgotPasswordSent": "تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.",
+    "homebar" : "الرئيسية",
+  "texteditorbar" : "محرر النصوص",
+  "settingbar" : "الإعدادات"
+
 }

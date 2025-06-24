@@ -1,6 +1,6 @@
+import 'package:digify/generated/l10n.dart';
 import 'package:digify/presentation/basicData_screen/widgets/editableTextfield.dart';
 import 'package:digify/theme/appTheme.dart';
-import 'package:digify/widgets/CustomTextField.dart';
 import 'package:flutter/material.dart';
 
 class BasicDataScreen extends StatefulWidget {
@@ -34,21 +34,22 @@ class _BasicDataScreenState extends State<BasicDataScreen> {
     if (_formKey.currentState!.validate()) {
       ScaffoldMessenger.of(
         context,
-      ).showSnackBar(const SnackBar(content: Text('Data saved successfully!')));
+      ).showSnackBar(SnackBar(content: Text(S.of(context).accountSave)));
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Apptheme.primaryColor),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
-          'Edit Account',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        title: Text(
+          s.accountTitle,
+          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.white,
         elevation: 1,
@@ -60,36 +61,36 @@ class _BasicDataScreenState extends State<BasicDataScreen> {
           child: Column(
             children: [
               buildEditableTextField(
-                label: "Email",
+                label: s.accountEmail,
                 controller: _emailController,
-                hintText: 'Enter your email',
+                hintText: s.accountEmail,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Email is required';
+                    return s.authValidationEnterEmail;
                   }
                   return null;
                 },
               ),
               const SizedBox(height: 25),
               buildEditableTextField(
-                label: "First Name",
+                label: s.accountFirstName,
                 controller: _firstNameController,
-                hintText: 'Enter your first name',
+                hintText: s.accountFirstName,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'First name is required';
+                    return s.authValidationEnterName;
                   }
                   return null;
                 },
               ),
               const SizedBox(height: 25),
               buildEditableTextField(
-                label: "Last Name",
+                label: s.accountLastName,
                 controller: _lastNameController,
-                hintText: 'Enter your last name',
+                hintText: s.accountLastName,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Last name is required';
+                    return s.authValidationEnterName;
                   }
                   return null;
                 },
@@ -106,8 +107,8 @@ class _BasicDataScreenState extends State<BasicDataScreen> {
                       borderRadius: BorderRadius.circular(6),
                     ),
                   ),
-                  child: const Text(
-                    'Save',
+                  child: Text(
+                    s.accountSave,
                     style: Apptheme.buttonBoldsecondary,
                   ),
                 ),

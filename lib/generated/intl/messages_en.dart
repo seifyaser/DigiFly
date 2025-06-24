@@ -21,5 +21,98 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "accountEmail": MessageLookupByLibrary.simpleMessage("Email"),
+    "accountFirstName": MessageLookupByLibrary.simpleMessage("First name"),
+    "accountLastName": MessageLookupByLibrary.simpleMessage("Last name"),
+    "accountSave": MessageLookupByLibrary.simpleMessage("Save"),
+    "accountTitle": MessageLookupByLibrary.simpleMessage("Edit Account"),
+    "authLoginButton": MessageLookupByLibrary.simpleMessage("Login"),
+    "authLoginContinueWithGoogle": MessageLookupByLibrary.simpleMessage(
+      "Continue with Google",
+    ),
+    "authLoginEmail": MessageLookupByLibrary.simpleMessage("Email"),
+    "authLoginForgotPassword": MessageLookupByLibrary.simpleMessage(
+      "Forgot Password?",
+    ),
+    "authLoginForgotPasswordSent": MessageLookupByLibrary.simpleMessage(
+      "Password reset link sent to your email",
+    ),
+    "authLoginInvalid": MessageLookupByLibrary.simpleMessage(
+      "Invalid email or password.",
+    ),
+    "authLoginNoAccount": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account?",
+    ),
+    "authLoginOr": MessageLookupByLibrary.simpleMessage("Or"),
+    "authLoginPassword": MessageLookupByLibrary.simpleMessage("Password"),
+    "authLoginRememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
+    "authLoginSignUp": MessageLookupByLibrary.simpleMessage("Sign up"),
+    "authLoginTitle": MessageLookupByLibrary.simpleMessage(
+      "Sign in to continue",
+    ),
+    "authSignupAlreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
+      "Already have an account?",
+    ),
+    "authSignupButton": MessageLookupByLibrary.simpleMessage("Sign up"),
+    "authSignupConfirmPassword": MessageLookupByLibrary.simpleMessage(
+      "Confirm password",
+    ),
+    "authSignupEmail": MessageLookupByLibrary.simpleMessage("Email"),
+    "authSignupLogin": MessageLookupByLibrary.simpleMessage("Login"),
+    "authSignupPassword": MessageLookupByLibrary.simpleMessage("Password"),
+    "authSignupSuccessMessage": MessageLookupByLibrary.simpleMessage(
+      "Account created successfully!",
+    ),
+    "authSignupTitle": MessageLookupByLibrary.simpleMessage(
+      "Create a new account",
+    ),
+    "authSignupUsername": MessageLookupByLibrary.simpleMessage("Username"),
+    "authValidationEnterConfirmPassword": MessageLookupByLibrary.simpleMessage(
+      "Please enter a confirm password",
+    ),
+    "authValidationEnterEmail": MessageLookupByLibrary.simpleMessage(
+      "Please enter an email",
+    ),
+    "authValidationEnterName": MessageLookupByLibrary.simpleMessage(
+      "Please enter a name",
+    ),
+    "authValidationEnterPassword": MessageLookupByLibrary.simpleMessage(
+      "Please enter a password",
+    ),
+    "authValidationPasswordLength": MessageLookupByLibrary.simpleMessage(
+      "Password must be at least 8 characters",
+    ),
+    "authValidationPasswordNotMatch": MessageLookupByLibrary.simpleMessage(
+      "Password not match",
+    ),
+    "editorIntroduceYourSelf": MessageLookupByLibrary.simpleMessage(
+      "Introduce yourself",
+    ),
+    "editorTitle": MessageLookupByLibrary.simpleMessage("Text Editor"),
+    "homeAndFly": MessageLookupByLibrary.simpleMessage("AND FLY"),
+    "homeBestSeller": MessageLookupByLibrary.simpleMessage("Best seller"),
+    "homeSearchPlaceholder": MessageLookupByLibrary.simpleMessage(
+      "Search here...",
+    ),
+    "homeSkip": MessageLookupByLibrary.simpleMessage("SKIP"),
+    "homeTheDigitalHustle": MessageLookupByLibrary.simpleMessage(
+      "THE DIGITAL HUSTLE",
+    ),
+    "homeViewAll": MessageLookupByLibrary.simpleMessage("View all"),
+    "homeWelcome": MessageLookupByLibrary.simpleMessage("Welcome"),
+    "homebar": MessageLookupByLibrary.simpleMessage("Home"),
+    "placeholderEditorfield": MessageLookupByLibrary.simpleMessage(
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    ),
+    "settingbar": MessageLookupByLibrary.simpleMessage("Setting"),
+    "settingsAboutUs": MessageLookupByLibrary.simpleMessage("About us"),
+    "settingsCallUs": MessageLookupByLibrary.simpleMessage("Call us"),
+    "settingsCallUsBanner": MessageLookupByLibrary.simpleMessage("Contact us"),
+    "settingsLanguages": MessageLookupByLibrary.simpleMessage("Languages"),
+    "settingsProfile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "settingsSignOut": MessageLookupByLibrary.simpleMessage("Sign out"),
+    "settingsTitle": MessageLookupByLibrary.simpleMessage("Setting"),
+    "texteditorbar": MessageLookupByLibrary.simpleMessage("Text Editor"),
+  };
 }

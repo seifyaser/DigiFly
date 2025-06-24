@@ -1,52 +1,63 @@
 {
-  "login": {
-    "title": "Sign in to continue",
-    "email": "Email",
-    "password": "Password",
-    "rememberMe": "Remember me",
-    "forgotPassword": "Forgot Password?",
-    "loginButton": "Login",
-    "or": "Or",
-    "continueWithGoogle": "Continue with Google",
-    "noAccount": "Don't have an account?",
-    "signUp": "Sign up"
-  },
-  "signup": {
-    "title": "Create a new account",
-    "username": "Username",
-    "email": "Email",
-    "password": "Password",
-    "confirmPassword": "Confirm password",
-    "signUpButton": "Sign up",
-    "alreadyHaveAccount": "Already have an account?",
-    "login": "Login"
-  },
-  "home": {
-    "welcome": "Welcome",
-    "searchPlaceholder": "Search here...",
-    "skip": "SKIP",
-    "theDigitalHustle": "THE DIGITAL HUSTLE",
-    "andFly": "AND FLY",
-    "bestSeller": "Best seller",
-    "viewAll": "View all"
-  },
-  "textEditor": {
-    "title": "Text Editor",
-    "introduceYourSelf": "Introduce yourself"
-  },
-  "settings": {
-    "title": "Setting",
-    "profile": "Profile",
-    "languages": "Languages",
-    "aboutUs": "About us",
-    "callUs": "Call us",
-    "signOut": "Sign out"
-  },
-  "account": {
-    "title": "Edit Account",
-    "email": "Email",
-    "firstName": "First name",
-    "lastName": "Last name",
-    "save": "Save"
-  }
+  "@@locale": "en",
+  "authLoginTitle": "Sign in to continue",
+  "authLoginEmail": "Email",
+  "authLoginPassword": "Password",
+  "authLoginRememberMe": "Remember me",
+  "authLoginForgotPassword": "Forgot Password?",
+  "authLoginButton": "Login",
+  "authLoginOr": "Or",
+  "authLoginContinueWithGoogle": "Continue with Google",
+  "authLoginNoAccount": "Don't have an account?",
+  "authLoginSignUp": "Sign up",
+  "authSignupSuccessMessage" : "Account created successfully!",
+  "authValidationEnterName": "Please enter a name",
+  "authValidationEnterEmail": "Please enter an email",
+  "authValidationEnterPassword": "Please enter a password",
+  "authValidationEnterConfirmPassword": "Please enter a confirm password",
+  "authValidationPasswordNotMatch": "Password not match",
+  "authValidationPasswordLength" : "Password must be at least 8 characters",
+
+  "authSignupTitle": "Create a new account",
+  "authSignupUsername": "Username",
+  "authSignupEmail": "Email",
+  "authSignupPassword": "Password",
+  "authSignupConfirmPassword": "Confirm password",
+  "authSignupButton": "Sign up",
+  "authSignupAlreadyHaveAccount": "Already have an account?",
+  "authSignupLogin": "Login",
+
+  "homeWelcome": "Welcome",
+  "homeSearchPlaceholder": "Search here...",
+  "homeSkip": "SKIP",
+  "homeTheDigitalHustle": "THE DIGITAL HUSTLE",
+  "homeAndFly": "AND FLY",
+  "homeBestSeller": "Best seller",
+  "homeViewAll": "View all",
+
+  "editorTitle": "Text Editor",
+  "editorIntroduceYourSelf": "Introduce yourself",
+  "placeholderEditorfield" :  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+
+
+  "settingsTitle": "Setting",
+  "settingsProfile": "Profile",
+  "settingsLanguages": "Languages",
+  "settingsAboutUs": "About us",
+  "settingsCallUs": "Call us",
+  "settingsSignOut": "Sign out",
+ "settingsCallUsBanner": "Contact us",
+
+
+  "accountTitle": "Edit Account",
+  "accountEmail": "Email",
+  "accountFirstName": "First name",
+  "accountLastName": "Last name",
+  "accountSave": "Save",
+  "authLoginInvalid": "Invalid email or password.",
+  "authLoginForgotPasswordSent": "Password reset link sent to your email",
+  "homebar" : "Home",
+  "texteditorbar" : "Text Editor",
+  "settingbar" : "Setting"
+
 }

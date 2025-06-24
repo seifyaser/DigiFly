@@ -12,10 +12,10 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          WelcomeAppBar(),
-          buildSearchBar(),
+          WelcomeAppBar(context),
+          buildSearchBar(context),
           buildBanner(),
-          buildProductList(),
+          buildProductList(context),
         ],
       ),
     );

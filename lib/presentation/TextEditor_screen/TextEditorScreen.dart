@@ -1,3 +1,4 @@
+import 'package:digify/generated/l10n.dart';
 import 'package:digify/presentation/TextEditor_screen/cubit/text_editor_cubit.dart';
 import 'package:digify/presentation/TextEditor_screen/cubit/text_editor_state.dart';
 import 'package:digify/presentation/TextEditor_screen/widgets/FormatToolBar.dart';
@@ -15,17 +16,23 @@ class TextEditorScreen extends StatefulWidget {
 class _TextEditorScreenState extends State<TextEditorScreen> {
   late TextEditingController _controller;
 
-  final String _defaultText = """
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-""";
+  bool _initialized = false;
 
   @override
   void initState() {
     super.initState();
-    _controller = TextEditingController(text: _defaultText);
-    context.read<TextEditorCubit>().updateText(_defaultText);
+    _controller = TextEditingController();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_initialized) {
+      final String defaultText = S.of(context).placeholderEditorfield;
+      _controller.text = defaultText;
+      context.read<TextEditorCubit>().updateText(defaultText);
+      _initialized = true;
+    }
   }
 
   @override
@@ -40,21 +47,18 @@ when an unknown printer took a galley of type and scrambled it to make a type sp
       listener: (context, state) {
         if (_controller.text != state.text) {
           _controller.text = state.text;
-          _controller.selection = TextSelection.collapsed(
-            offset: state.text.length,
-          );
+          _controller.selection = TextSelection.collapsed(offset: state.text.length);
         }
       },
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            title: const Text(
-              "Text Editor",
-              style: TextStyle(color: Colors.black),
+            title: Text(
+              S.of(context).editorTitle,
+              style: Apptheme.buttonBoldprimary,
             ),
             centerTitle: true,
-
             elevation: 0,
           ),
           body: Padding(
@@ -62,7 +66,7 @@ when an unknown printer took a galley of type and scrambled it to make a type sp
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Introduce your self', style: Apptheme.heading3),
+                Text(S.of(context).editorIntroduceYourSelf, style: Apptheme.heading3),
                 const SizedBox(height: 20),
                 // =========== ToolBar =========== //
                 Row(
@@ -93,9 +97,8 @@ when an unknown printer took a galley of type and scrambled it to make a type sp
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                     ),
-                    onChanged:
-                        (text) =>
-                            context.read<TextEditorCubit>().updateText(text),
+                    onChanged: (text) =>
+                        context.read<TextEditorCubit>().updateText(text),
                   ),
                 ),
               ],

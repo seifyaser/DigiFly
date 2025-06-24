@@ -1,4 +1,5 @@
 import 'package:digify/data/auth_service.dart';
+import 'package:digify/generated/l10n.dart';
 import 'package:digify/presentation/Login_screen.dart/widgets/LoginForm.dart';
 import 'package:digify/widgets/AuthFooter.dart';
 import 'package:flutter/material.dart';
@@ -34,8 +35,8 @@ class _LoginscreenState extends State<Loginscreen> {
       );
       if (isLoggedIn) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Welcome back!'),
+          SnackBar(
+            content: Text(S.of(context).homeWelcome),
             backgroundColor: Colors.green,
             behavior: SnackBarBehavior.floating,
           ),
@@ -43,11 +44,11 @@ class _LoginscreenState extends State<Loginscreen> {
         Navigator.pushReplacementNamed(context, '/Navigation-Bar');
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Invalid email or password.'),
+          SnackBar(
+            content: Text(S.of(context).authLoginInvalid ?? "Invalid email or password."),
             backgroundColor: Colors.red,
             behavior: SnackBarBehavior.floating,
-            duration: Duration(seconds: 4),
+            duration: const Duration(seconds: 4),
           ),
         );
       }
@@ -56,8 +57,8 @@ class _LoginscreenState extends State<Loginscreen> {
 
   void _handleForgotPassword(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Password reset link sent to your email'),
+      SnackBar(
+        content: Text(S.of(context).authLoginForgotPasswordSent ?? 'Password reset link sent to your email'),
         backgroundColor: Colors.green,
         behavior: SnackBarBehavior.floating,
       ),
@@ -92,13 +93,12 @@ class _LoginscreenState extends State<Loginscreen> {
                 });
               },
               onForgotPassword: () => _handleForgotPassword(context),
-              onLogin: () => _handleLogin(context),
+              onLogin: () => _handleLogin(context), context: context,
             ),
-
             const SizedBox(height: 50),
             AuthFooter(
-              questionText: "Don't have an account? ",
-              actionText: "Sign up",
+              questionText: S.of(context).authLoginNoAccount,
+              actionText: S.of(context).authLoginSignUp,
               onTap: () => _handleSignUp(context),
             ),
           ],

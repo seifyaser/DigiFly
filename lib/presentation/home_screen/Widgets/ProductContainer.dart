@@ -39,8 +39,10 @@ Widget Productcontainer({
                 ),
               ),
             ),
-            Positioned(
+            // Discount container - now uses PositionedDirectional
+            PositionedDirectional(
               top: 15,
+              start: 0, // Will be 'left' in LTR, 'right' in RTL
               child: Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
@@ -58,10 +60,11 @@ Widget Productcontainer({
                 ),
               ),
             ),
-            const Positioned(
+            // Favorite icon - now uses PositionedDirectional
+            PositionedDirectional(
               top: 15,
-              right: -2,
-              child: Icon(
+              end: -2, // Will be 'right' in LTR, 'left' in RTL
+              child: const Icon(
                 Icons.favorite_border,
                 color: Color(0xFF28A745),
                 size: 30,
@@ -72,7 +75,7 @@ Widget Productcontainer({
         Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
+            // crossAxisAlignment: CrossAxisAlignment.start is good for text that aligns to the start of the writing direction
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(

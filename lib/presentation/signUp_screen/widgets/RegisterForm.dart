@@ -3,8 +3,10 @@ import 'package:digify/widgets/AuthHeader.dart';
 import 'package:digify/widgets/CustomButton.dart';
 import 'package:digify/widgets/CustomTextField.dart';
 import 'package:digify/theme/appTheme.dart';
+import 'package:digify/generated/l10n.dart';
 
 Widget buildRegisterForm({
+  required BuildContext context,
   required GlobalKey<FormState> formKey,
   required TextEditingController nameController,
   required TextEditingController emailController,
@@ -23,54 +25,61 @@ Widget buildRegisterForm({
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const SizedBox(height: 65),
-        const AuthHeader(
+        AuthHeader(
           imagePath: 'assets/images/logoframe.png',
-          title: 'Create a new account',
+          title: S.of(context).authSignupTitle,
         ),
         const SizedBox(height: 40),
         // Name
         CustomTextfield(
           controller: nameController,
-          hintText: 'Username',
+          hintText: S.of(context).authSignupUsername,
           prefixIcon: const Icon(Icons.person),
           validator: (value) =>
-              value == null || value.isEmpty ? 'Please enter your name' : null,
+              value == null || value.isEmpty
+                  ? S.of(context).authValidationEnterName
+                  : null,
         ),
         const SizedBox(height: 20),
         // Email
         CustomTextfield(
           controller: emailController,
           keyboardType: TextInputType.emailAddress,
-          hintText: 'Email',
+          hintText: S.of(context).authSignupEmail,
           prefixIcon: const Icon(Icons.email),
           validator: (value) =>
-              value == null || value.isEmpty ? 'Please enter your email' : null,
+              value == null || value.isEmpty
+                  ? S.of(context).authValidationEnterEmail
+                  : null,
         ),
         const SizedBox(height: 20),
         // Password
         CustomTextfield(
           controller: passwordController,
-          hintText: 'Password',
+          hintText: S.of(context).authSignupPassword,
           prefixIcon: const Icon(Icons.lock),
           obscureText: obscurePassword,
           suffixIcon: IconButton(
-            icon: Icon(obscurePassword ? Icons.visibility_off : Icons.visibility),
+            icon: Icon(obscurePassword
+                ? Icons.visibility_off
+                : Icons.visibility),
             onPressed: onTogglePassword,
           ),
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'Please enter your password';
+              return S.of(context).authValidationEnterPassword;
             }
             if (value.length < 8) {
-              return 'Password must be at least 8 characters';
+              return S.of(context).authValidationPasswordLength;
             }
             return null;
           },
         ),
         const SizedBox(height: 20),
+        // Confirm password
         CustomTextfield(
           controller: confirmPasswordController,
-          hintText: 'Confirm password',
+          hintText: S.of(context).authSignupConfirmPassword,
           prefixIcon: const Icon(Icons.lock),
           obscureText: obscureConfirmPassword,
           suffixIcon: IconButton(
@@ -81,17 +90,20 @@ Widget buildRegisterForm({
           ),
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'Please confirm your password';
+              return S.of(context).authValidationEnterConfirmPassword;
             }
             if (value != passwordController.text) {
-              return 'Passwords do not match';
+              return S.of(context).authValidationPasswordNotMatch;
             }
             return null;
           },
         ),
         const SizedBox(height: 40),
+        // Sign Up Button
         CustomButton(
-          text: isLoading ? 'Signing Up...' : 'Sign Up',
+          text: isLoading
+              ? 'Signing Up...'
+              : S.of(context).authSignupButton,
           onPressed: isLoading ? null : onHandleSignUp,
           textStylebutton: Apptheme.buttonBoldsecondary,
         ),

@@ -2,6 +2,7 @@ import 'package:digify/data/auth_service.dart';
 import 'package:digify/presentation/signUp_screen/widgets/RegisterForm.dart';
 import 'package:flutter/material.dart';
 import 'package:digify/widgets/AuthFooter.dart';
+import 'package:digify/generated/l10n.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -35,7 +36,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     try {
       await AuthService().register(username, email, password);
-      _showSnackBar('Account created successfully!');
+      _showSnackBar(S.of(context).authSignupSuccessMessage);
       Navigator.pushReplacementNamed(context, '/Navigation-Bar');
     } catch (e) {
       _showSnackBar(e.toString());
@@ -94,12 +95,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 isLoading: _isLoading,
                 onTogglePassword: _togglePassword,
                 onToggleConfirmPassword: _toggleConfirmPassword,
-                onHandleSignUp: _handleSignUp,
+                onHandleSignUp: _handleSignUp, context: context,
               ),
-              const SizedBox(height: 120),
+              const SizedBox(height: 100),
               AuthFooter(
-                questionText: 'Already have an account ? ',
-                actionText: 'Login',
+                questionText: S.of(context).authSignupAlreadyHaveAccount,
+                actionText: S.of(context).authSignupLogin,
                 onTap: () {
                   Navigator.pushNamed(context, '/login-screen');
                 },

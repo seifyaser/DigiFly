@@ -4,8 +4,10 @@ import 'package:digify/theme/appTheme.dart';
 import 'package:digify/widgets/AuthHeader.dart';
 import 'package:digify/widgets/CustomButton.dart';
 import 'package:digify/widgets/CustomTextField.dart';
+import 'package:digify/generated/l10n.dart';
 
 Widget buildLoginForm({
+  required BuildContext context,
   required GlobalKey<FormState> formKey,
   required TextEditingController emailController,
   required TextEditingController passwordController,
@@ -22,29 +24,27 @@ Widget buildLoginForm({
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const SizedBox(height: 85),
-        const AuthHeader(
+        AuthHeader(
           imagePath: 'assets/images/logoframe.png',
-          title: 'Sign in to continue',
+          title: S.of(context).authLoginTitle,
         ),
         const SizedBox(height: 40),
-
         CustomTextfield(
           controller: emailController,
           keyboardType: TextInputType.emailAddress,
-          hintText: 'Enter your email',
+          hintText: S.of(context).authLoginEmail,
           prefixIcon: const Icon(Icons.email),
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'Please enter your email';
+              return S.of(context).authLoginEmail;
             }
             return null;
           },
         ),
         const SizedBox(height: 20),
-
         CustomTextfield(
           controller: passwordController,
-          hintText: 'Enter your password',
+          hintText: S.of(context).authLoginPassword,
           prefixIcon: const Icon(Icons.lock),
           obscureText: obscurePassword,
           suffixIcon: IconButton(
@@ -55,36 +55,28 @@ Widget buildLoginForm({
           ),
           validator: (value) {
             if (value == null || value.isEmpty) {
-              return 'Please enter your password';
+              return S.of(context).authLoginPassword;
             }
             return null;
           },
         ),
-
         const SizedBox(height: 28),
-
         RememberForgotRow(
           rememberMeValue: rememberMe,
           onRememberMeChanged: onRememberMeChanged,
           onForgotPassword: onForgotPassword,
         ),
-
         const SizedBox(height: 28),
-
         CustomButton(
-          text: 'Login',
+          text: S.of(context).authLoginButton,
           onPressed: onLogin,
           textStylebutton: Apptheme.buttonBoldsecondary,
         ),
-
         const SizedBox(height: 24),
-
-        const Text('Or', style: Apptheme.caption1),
-
+        Text(S.of(context).authLoginOr, style: Apptheme.caption1),
         const SizedBox(height: 24),
-
         CustomButton(
-          text: 'Continue with Google',
+          text: S.of(context).authLoginContinueWithGoogle,
           onPressed: () {},
           backgroundColor: Colors.white,
           textStylebutton: Apptheme.buttonBoldprimary,

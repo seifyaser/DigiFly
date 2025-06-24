@@ -1,3 +1,4 @@
+import 'package:digify/generated/l10n.dart';
 import 'package:digify/theme/appTheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -7,17 +8,18 @@ class AccountSettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final s = S.of(context);
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Center(child: Text('Setting')),
+        title: Center(child: Text(s.settingsTitle, style: Apptheme.buttonBoldprimary,)), // "Setting"
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           Row(
             children: [
-              CircleAvatar(radius: 30, child: Icon(Icons.person)),
+              const CircleAvatar(radius: 30, child: Icon(Icons.person)),
               const SizedBox(width: 16),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,61 +37,71 @@ class AccountSettingsScreen extends StatelessWidget {
               ),
             ],
           ),
-
           const SizedBox(height: 30),
-          const Text(
-            'Settings',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+          
+          Text(
+            s.settingsTitle,
+            style: Apptheme.heading5,
           ),
+          
           const SizedBox(height: 10),
+          
           ListTile(
             leading: SvgPicture.asset(
               'assets/images/profileIcon.svg',
               height: 24,
             ),
-            title: const Text('Profile'),
+            title: Text(s.settingsProfile, style: Apptheme.heading4,),
             trailing: const Icon(Icons.chevron_right),
             onTap: () {
               Navigator.pushNamed(context, '/user-profile');
             },
           ),
+          
           ListTile(
-            leading: SvgPicture.asset('assets/images/language.svg', height: 24),
-            title: const Text('Languages'),
+            leading: SvgPicture.asset(
+              'assets/images/language.svg',
+              height: 24,
+            ),
+            title: Text(s.settingsLanguages, style: Apptheme.heading4,),
             trailing: const Text('العربية', style: Apptheme.TextBold4),
             onTap: () {},
           ),
 
           const SizedBox(height: 30),
-
-          const Text(
-            'Contact us',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+          
+          Text(
+            s.settingsCallUsBanner,
+            style: Apptheme.heading5,
           ),
+          
           const SizedBox(height: 10),
+          
           ListTile(
             leading: SvgPicture.asset(
               'assets/images/callUsICON.svg',
               height: 24,
             ),
-            title: const Text('Call us'),
+            title: Text(s.settingsCallUs, style: Apptheme.heading4,),
             trailing: const Icon(Icons.chevron_right),
             onTap: () {},
           ),
+          
           ListTile(
             leading: SvgPicture.asset(
               'assets/images/ABOUTusICON.svg',
               height: 24,
             ),
-            title: const Text('About us'),
+            title: Text(s.settingsAboutUs, style: Apptheme.heading4,),
             trailing: const Icon(Icons.chevron_right),
             onTap: () {},
           ),
 
           const SizedBox(height: 30),
+          
           ListTile(
             leading: SvgPicture.asset('assets/images/signout.svg', height: 24),
-            title: const Text('Sign out'),
+            title: Text(s.settingsSignOut, style: Apptheme.heading4,),
             onTap: () {
               Navigator.pushNamed(context, '/login-screen');
             },

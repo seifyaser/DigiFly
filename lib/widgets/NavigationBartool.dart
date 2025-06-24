@@ -1,6 +1,6 @@
+import 'package:digify/generated/l10n.dart';
 import 'package:digify/presentation/AccountSettings/AccountScreen.dart';
 import 'package:digify/presentation/TextEditor_screen/TextEditorScreen.dart';
-import 'package:digify/presentation/basicData_screen/basicData.dart';
 import 'package:digify/presentation/home_screen/homepage.dart';
 import 'package:digify/theme/appTheme.dart';
 import 'package:flutter/material.dart';
@@ -33,10 +33,10 @@ class _NavigationBartoolState extends State<NavigationBartool> {
         currentIndex: _selectedIndex,
         selectedItemColor: Apptheme.primaryColor,
         onTap: _onItemTapped,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.text_fields), label: "Text Editor"),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Setting"),
+        items:  [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: S.of(context).homebar),
+          BottomNavigationBarItem(icon: Icon(Icons.text_fields), label: S.of(context).texteditorbar),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: S.of(context).settingbar),
         ],
       ),
     );

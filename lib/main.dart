@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => TextEditorCubit(),
       child: MaterialApp(
+        locale: Locale('ar'),
         localizationsDelegates: [
                 S.delegate,
                 GlobalMaterialLocalizations.delegate,
