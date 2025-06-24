@@ -1,0 +1,52 @@
+{
+  "login": {
+    "title": "Sign in to continue",
+    "email": "Email",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot Password?",
+    "loginButton": "Login",
+    "or": "Or",
+    "continueWithGoogle": "Continue with Google",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign up"
+  },
+  "signup": {
+    "title": "Create a new account",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "signUpButton": "Sign up",
+    "alreadyHaveAccount": "Already have an account?",
+    "login": "Login"
+  },
+  "home": {
+    "welcome": "Welcome",
+    "searchPlaceholder": "Search here...",
+    "skip": "SKIP",
+    "theDigitalHustle": "THE DIGITAL HUSTLE",
+    "andFly": "AND FLY",
+    "bestSeller": "Best seller",
+    "viewAll": "View all"
+  },
+  "textEditor": {
+    "title": "Text Editor",
+    "introduceYourSelf": "Introduce yourself"
+  },
+  "settings": {
+    "title": "Setting",
+    "profile": "Profile",
+    "languages": "Languages",
+    "aboutUs": "About us",
+    "callUs": "Call us",
+    "signOut": "Sign out"
+  },
+  "account": {
+    "title": "Edit Account",
+    "email": "Email",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "save": "Save"
+  }
+}

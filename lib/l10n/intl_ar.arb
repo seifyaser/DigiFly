@@ -1,0 +1,52 @@
+{
+  "login": {
+    "title": "تسجيل الدخول للمتابعة",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "rememberMe": "تذكرني",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "loginButton": "تسجيل الدخول",
+    "or": "أو",
+    "continueWithGoogle": "التسجيل عن طريق جوجل",
+    "noAccount": "ليس لديك حساب؟",
+    "signUp": "إنشاء حساب"
+  },
+  "signup": {
+    "title": "إنشاء حساب جديد",
+    "username": "اسم المستخدم",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "signUpButton": "إنشاء حساب",
+    "alreadyHaveAccount": "لديك حساب بالفعل؟",
+    "login": "تسجيل الدخول"
+  },
+  "home": {
+    "welcome": "مرحبًا",
+    "searchPlaceholder": "ابحث هنا...",
+    "skip": "تخطّي",
+    "theDigitalHustle": "العمل الرقمي",
+    "andFly": "والانطلاق",
+    "bestSeller": "الأفضل مبيعًا",
+    "viewAll": "عرض الكل"
+  },
+  "textEditor": {
+    "title": "محرر النص",
+    "introduceYourSelf": "قدم نفسك"
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "profile": "الحساب الشخصي",
+    "languages": "اللغة",
+    "aboutUs": "معلومات عنا",
+    "callUs": "اتصل بنا",
+    "signOut": "تسجيل الخروج"
+  },
+  "account": {
+    "title": "تحديث الحساب",
+    "email": "البريد الإلكتروني",
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "save": "حفظ"
+  }
+}
