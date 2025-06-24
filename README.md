@@ -1,4 +1,4 @@
-# Digify Mobile App
+# Digifly Mobile App
 
 
 ## Overview
