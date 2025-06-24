@@ -29,7 +29,6 @@ This application is built with a strong focus on responsiveness and internationa
 * **Dynamic UI:** Created a visually appealing and responsive home screen.
 * **Custom Navigation:** Features a custom app bar and a bottom navigation bar for easy navigation.
 * **Horizontal Lists with Mock Map like JSON Data:**
-    * Implemented a horizontal list of images that fetches data from the same hardcoded JSON file you used in Part 1.
     * Created a horizontal list of products, also sourced from the JSON file, displayed below the image list.
 * **Adaptive Layout for RTL/LTR:** Ensures UI elements like the search bar and product list scroll direction adapt correctly based on the application's language (English LTR, Arabic RTL) for an intuitive user experience.
 
@@ -42,7 +41,6 @@ This application is built with a strong focus on responsiveness and internationa
 * **Undo/Redo Functionality:** Implemented Undo and Redo buttons from scratch, demonstrating an understanding of state management.
 * **Enhanced Usability:** Implemented two additional functionalities (Word Count and Text Formatting).
 
-*(Add screenshot for Text Editor here if available, e.g.:)*
 ### Part 4: Settings Page Implementation
 * **User Data Display:** Created a settings page responsible for displaying user data and profile information.
 * **Profile Settings Navigation:** Includes a dedicated section for navigating to different profile settings and options.
