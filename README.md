@@ -67,6 +67,10 @@ This application is built with a strong focus on responsiveness and internationa
 * **Responsiveness:** Implemented UI adaptable to various screen sizes using Flutter's layout widgets and techniques.
 * **Internationalization:** Full support for English and Arabic with seamless switching, impacting text, layout direction (RTL/LTR), and element positioning.
 * **Error Handling:** Implemented clear error messages for input validations to improve user experience.
+* **Vector Graphics (SVG):** Utilized the `flutter_svg` package for rendering scalable vector graphics. This approach significantly contributes to:
+    * **Reduced App Size:** SVG files are generally smaller than raster images (PNG, JPEG) for complex graphics, especially icons and illustrations.
+    * **Scalability without Quality Loss:** Ensures images look crisp and clear on all screen sizes and resolutions without pixelation.
+    * **Performance Optimization:** Efficient rendering of vector assets, leading to smoother UI.
 
 
 
