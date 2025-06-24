@@ -9,15 +9,31 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          WelcomeAppBar(context),
-          buildSearchBar(context),
-          buildBanner(),
-          buildProductList(context),
-        ],
-      ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final screenWidth = constraints.maxWidth;
+
+        return Scaffold(
+          body: CustomScrollView(
+            slivers: [
+              WelcomeAppBar(context),
+
+
+              buildSearchBar(context),
+
+              SliverPadding(
+                padding: EdgeInsets.symmetric(horizontal: screenWidth < 360 ? 12 : 16, vertical: 12),
+                sliver: buildBanner(),
+              ),
+
+              SliverPadding(
+                padding: EdgeInsets.symmetric(horizontal: screenWidth < 360 ? 12 : 16),
+                sliver: buildProductList(context),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
