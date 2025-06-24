@@ -14,8 +14,28 @@ This application is built with a strong focus on responsiveness and internationa
 * **User-Friendly Interface:** Designed with a clean and intuitive UI.
 * **Comprehensive Form Validation:** Includes validations for required fields, email format, password strength, and confirmation matching during signup.
 * **Clear Error Messaging:** Provides helpful error messages for invalid inputs to enhance user experience.
-* **Hardcoded Mock Map Like JSON having key and value:** Integrated authentication process with a local, hardcoded Mock Map for user data management.
 * **Seamless Language Switching:** Fully supports dynamic language switching between English and Arabic.
+* **Hardcoded Mock Map Like JSON having key and value:** Integrated authentication process with a local, hardcoded Mock Map for user data management. This mock data simulates user credentials and existing user information for authentication and signup validation:
+    ```dart
+    final Map<String, String> _mockCredentials = {
+      'admin@digifly.com': 'admin123',
+      'user@digifly.com': 'user123',
+      'test@digifly.com': 'test123',
+    };
+
+    final List<String> _existingEmails = [
+      'john.doe@example.com',
+      'jane.smith@example.com',
+      'admin@digifly.com',
+    ];
+
+    final List<String> _existingUsernames = [
+      'johndoe',
+      'janesmith',
+      'admin',
+    ];
+    ```
+
 
 | Login Screen (English) | Login Screen (Arabic) |
 |---|---|
@@ -24,7 +44,6 @@ This application is built with a strong focus on responsiveness and internationa
 | Signup Screen (English) | Signup Screen (Arabic) |
 |---|---|
 | ![Signup English](screenshots/SignUpEnglish.jpg) | ![Signup Arabic](screenshots/SignUParabic.jpg) |
-
 ### Part 2: Home Screen Implementation
 * **Dynamic UI:** Created a visually appealing and responsive home screen.
 * **Custom Navigation:** Features a custom app bar and a bottom navigation bar for easy navigation.
