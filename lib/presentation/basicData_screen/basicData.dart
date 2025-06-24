@@ -12,15 +12,34 @@ class BasicDataScreen extends StatefulWidget {
 
 class _BasicDataScreenState extends State<BasicDataScreen> {
   final _formKey = GlobalKey<FormState>(); 
-  final TextEditingController _firstNameController = TextEditingController(
-    text: "Ahmed",
-  );
-  final TextEditingController _lastNameController = TextEditingController(
-    text: "Alaa",
-  );
-  final TextEditingController _emailController = TextEditingController(
-    text: "ahmed.alaa123@gmail.com",
-  );
+  final TextEditingController _firstNameController = TextEditingController(text: "Ahmed");
+  final TextEditingController _lastNameController = TextEditingController(text: "Alaa");
+  final TextEditingController _emailController = TextEditingController(text: "ahmed.alaa123@gmail.com");
+
+  void showFieldError(String fieldName) {
+    final s = S.of(context);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('$fieldName ${s.authValidationEnterEmail}!')),
+    );
+  }
+
+  void _saveData() {
+    if (_formKey.currentState!.validate()) {
+      // All fields valid
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.of(context).accountSave)),
+      );
+    } else {
+      // Check which fields are empty
+      if (_emailController.text.isEmpty) {
+        showFieldError(S.of(context).accountEmail);
+      } else if (_firstNameController.text.isEmpty) {
+        showFieldError(S.of(context).accountFirstName);
+      } else if (_lastNameController.text.isEmpty) {
+        showFieldError(S.of(context).accountLastName);
+      }
+    }
+  }
 
   @override
   void dispose() {
@@ -28,14 +47,6 @@ class _BasicDataScreenState extends State<BasicDataScreen> {
     _lastNameController.dispose();
     _emailController.dispose();
     super.dispose();
-  }
-
-  void _saveData() {
-    if (_formKey.currentState!.validate()) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text(S.of(context).accountSave)));
-    }
   }
 
   @override
@@ -58,6 +69,7 @@ class _BasicDataScreenState extends State<BasicDataScreen> {
         padding: const EdgeInsets.all(20),
         child: Form(
           key: _formKey,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           child: Column(
             children: [
               buildEditableTextField(

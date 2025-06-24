@@ -405,6 +405,11 @@ class S {
     );
   }
 
+  /// `English`
+  String get Languageoption {
+    return Intl.message('English', name: 'Languageoption', desc: '', args: []);
+  }
+
   /// `Edit Account`
   String get accountTitle {
     return Intl.message(

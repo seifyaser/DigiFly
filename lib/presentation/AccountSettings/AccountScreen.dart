@@ -12,7 +12,7 @@ class AccountSettingsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Center(child: Text(s.settingsTitle, style: Apptheme.buttonBoldprimary,)), // "Setting"
+        title: Center(child: Text(s.settingsTitle, style: Apptheme.buttonBoldprimary,)), 
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
@@ -64,7 +64,7 @@ class AccountSettingsScreen extends StatelessWidget {
               height: 24,
             ),
             title: Text(s.settingsLanguages, style: Apptheme.heading4,),
-            trailing: const Text('العربية', style: Apptheme.TextBold4),
+            trailing: Text(S.of(context).Languageoption, style: Apptheme.TextBold4),
             onTap: () {},
           ),
 
@@ -103,7 +103,7 @@ class AccountSettingsScreen extends StatelessWidget {
             leading: SvgPicture.asset('assets/images/signout.svg', height: 24),
             title: Text(s.settingsSignOut, style: Apptheme.heading4,),
             onTap: () {
-              Navigator.pushNamed(context, '/login-screen');
+              Navigator.pushReplacementNamed(context, '/login-screen');
             },
           ),
         ],
