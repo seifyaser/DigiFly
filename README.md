@@ -17,24 +17,25 @@ This application is built with a strong focus on responsiveness and internationa
 * **Seamless Language Switching:** Fully supports dynamic language switching between English and Arabic.
 * **Hardcoded Mock Map Like JSON having key and value:** Integrated authentication process with a local, hardcoded Mock Map for user data management. This mock data simulates user credentials and existing user information for authentication and signup validation:
     ```dart
-    final Map<String, String> _mockCredentials = {
+    // Testing SignIn Functionality by providing local Credentials
       'admin@digifly.com': 'admin123',
       'user@digifly.com': 'user123',
       'test@digifly.com': 'test123',
-    };
+   
 
-    final List<String> _existingEmails = [
+    // Testing SignUP Functionality by providing local Email for existing user information for authentication and signup validation
       'john.doe@example.com',
       'jane.smith@example.com',
       'admin@digifly.com',
-    ];
+    
 
-    final List<String> _existingUsernames = [
+   // usernames in signup validation
       'johndoe',
       'janesmith',
       'admin',
-    ];
+
     ```
+    You can verify the sign-in functionality using the provided `_mockCredentials`. For sign-up validation, you can test with emails and usernames from `_existingEmails` and `_existingUsernames` to see existing user errors.
 
 
 | Login Screen (English) | Login Screen (Arabic) |
