@@ -1,4 +1,6 @@
+import 'package:digify/presentation/basicData_screen/widgets/editableTextfield.dart';
 import 'package:digify/theme/appTheme.dart';
+import 'package:digify/widgets/CustomTextField.dart';
 import 'package:flutter/material.dart';
 
 class BasicDataScreen extends StatefulWidget {
@@ -9,17 +11,31 @@ class BasicDataScreen extends StatefulWidget {
 }
 
 class _BasicDataScreenState extends State<BasicDataScreen> {
-  final TextEditingController _firstNameController =
-      TextEditingController(text: "Ahmed");
-  final TextEditingController _lastNameController =
-      TextEditingController(text: "Alaa");
- final TextEditingController _emailController =
-      TextEditingController(text: "ahmed.alaa123@gmail.com");
+  final _formKey = GlobalKey<FormState>(); 
+  final TextEditingController _firstNameController = TextEditingController(
+    text: "Ahmed",
+  );
+  final TextEditingController _lastNameController = TextEditingController(
+    text: "Alaa",
+  );
+  final TextEditingController _emailController = TextEditingController(
+    text: "ahmed.alaa123@gmail.com",
+  );
+
   @override
   void dispose() {
     _firstNameController.dispose();
     _lastNameController.dispose();
+    _emailController.dispose();
     super.dispose();
+  }
+
+  void _saveData() {
+    if (_formKey.currentState!.validate()) {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Data saved successfully!')));
+    }
   }
 
   @override
@@ -39,80 +55,68 @@ class _BasicDataScreenState extends State<BasicDataScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
               buildEditableTextField(
-              label: "Email",
-              controller: _emailController,
-            ),
-            const SizedBox(height: 5),
-    
-            const SizedBox(height: 25),
-            buildEditableTextField(
-              label: "First name",
-              controller: _firstNameController,
-            ),
-            const SizedBox(height: 25),
-            buildEditableTextField(
-              label: "Last name",
-              controller: _lastNameController,
-            ),
-            const Spacer(),
-            SizedBox(
-              width: double.infinity,
-              height: 48,
-              child: ElevatedButton(
-                onPressed: () {
-                  // تنفيذ حفظ البيانات هنا
+                label: "Email",
+                controller: _emailController,
+                hintText: 'Enter your email',
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Email is required';
+                  }
+                  return null;
                 },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Apptheme.primaryColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(6),
+              ),
+              const SizedBox(height: 25),
+              buildEditableTextField(
+                label: "First Name",
+                controller: _firstNameController,
+                hintText: 'Enter your first name',
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'First name is required';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 25),
+              buildEditableTextField(
+                label: "Last Name",
+                controller: _lastNameController,
+                hintText: 'Enter your last name',
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Last name is required';
+                  }
+                  return null;
+                },
+              ),
+              const Spacer(),
+              SizedBox(
+                width: double.infinity,
+                height: 48,
+                child: ElevatedButton(
+                  onPressed: _saveData,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Apptheme.primaryColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                  ),
+                  child: const Text(
+                    'Save',
+                    style: Apptheme.buttonBoldsecondary,
                   ),
                 ),
-                child: const Text('Save',style: Apptheme.buttonBoldsecondary,),
               ),
-            ),
-            const SizedBox(height: 20),
-          ],
+              const SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );
   }
-
-Widget buildEditableTextField({
-  required String label,
-  required TextEditingController controller,
-}) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text(label, style: Apptheme.caption2),
-      Row(
-        children: [
-          Expanded(
-            child: TextField(
-              controller: controller,
-              style: Apptheme.caption1,
-              decoration: const InputDecoration(
-                isDense: true,
-                contentPadding: EdgeInsets.symmetric(vertical: 8),
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey, width: 0.5),
-                ),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.green, width: 1),
-                ),
-              ),
-            ),
-          ),
-          const Icon(Icons.edit, size: 18, color: Colors.grey),
-        ],
-      ),
-    ],
-  );
-}
-
 }
