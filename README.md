@@ -1,7 +1,5 @@
 # Digify Mobile App
 
-![Digify App Homepage Screenshot](screenshots/HomepageEnglish.jpg)
-_A glimpse of the responsive and internationalized Digify mobile application._
 
 ## Overview
 
@@ -68,7 +66,7 @@ This repository contains the solution for the Mobile App Development Assessment 
 ## Technical Details & Best Practices
 
 * **State Management:** Implemented Cubit state management in TextEditor Screen to separate the big logic of it from the UI for managing Screen state and SetState in AUTH screens.
-* [cite_start]**Responsiveness:** Implemented UI adaptable to various screen sizes using Flutter's layout widgets and techniques.
-* [cite_start]**Internationalization:** Full support for English and Arabic with seamless switching, impacting text, layout direction (RTL/LTR), and element positioning.
-* [cite_start]**Error Handling:** Implemented clear error messages for input validations to improve user experience.
+**Responsiveness:** Implemented UI adaptable to various screen sizes using Flutter's layout widgets and techniques.
+**Internationalization:** Full support for English and Arabic with seamless switching, impacting text, layout direction (RTL/LTR), and element positioning.
+**Error Handling:** Implemented clear error messages for input validations to improve user experience.
 
