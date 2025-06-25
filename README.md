@@ -61,11 +61,10 @@ This application is built with a strong focus on responsiveness and internationa
 * **Undo/Redo Functionality:** Implemented Undo and Redo buttons from scratch, demonstrating an understanding of state management.
 * **Enhanced Usability:** Implemented two additional functionalities (Word Count and Text Formatting).
 
-
 | Text Editor Screen (English) | Text Editor Screen (Arabic) |
 |---|---|
 | ![Text Editor English](screenshots/testEditorENGLISH.jpg) | ![Text Editor Arabic](screenshots/textEditorArabic.jpg) |
-_Custom text editor with Undo/Redo and other enhancements._
+
 
 ### Part 4: Settings Page Implementation
 * **User Data Display:** Created a settings page responsible for displaying user data and profile information.
